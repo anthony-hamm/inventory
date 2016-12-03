@@ -13,3 +13,11 @@ end
 10.times do |n|
 	Item.create(name:"Item#{n+1}")
 end
+
+10.times do |n|
+	Entry.create(store_id: n+1, item_id: n+1)
+end
+
+10.times do |n|
+	Sale.create(store_id: n+1, item_id: n+1)
+end
