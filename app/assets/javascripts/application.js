@@ -12,6 +12,36 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+$(document).ready(function() {
+	$('.datatable').DataTable({
+		/*"dom": '<"top"i>rt<"bottom"flp><"clear">',*/
+		/*httpsÑ--datatables.net-examples-basic?init-dom.html*/
+
+		"order": [[ 0, "desc" ]],
+        "language": {
+            "decimal":        "",
+            "emptyTable":     "No hay datos disponibles",
+            "info":           "Mostrando del _START_ al _END_ de _TOTAL_ resultados",
+            "infoEmpty":      "Mostrando 0 a 0 de 0 entradas",
+            "infoFiltered":   "(filtrado de _MAX_ resultados)",
+            "infoPostFix":    "",
+            "thousands":      ",",
+            "lengthMenu":     "Mostrar _MENU_ resultados",
+            "loadingRecords": "Cargando...",
+            "processing":     "Procesando...",
+            "search":         "Buscar:",
+            "zeroRecords":    "No se encontraron resultados",
+            "paginate": {
+                "first":      "Primero",
+                "last":       "Último",
+                "next":       "Siguiente",
+                "previous":   "Anterior"
+            }
+        }
+    });
+});

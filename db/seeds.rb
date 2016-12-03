@@ -9,3 +9,7 @@
 10.times do |n|
 	Store.create(name:"Store#{n+1}")
 end
+
+10.times do |n|
+	Item.create(name:"Item#{n+1}")
+end
