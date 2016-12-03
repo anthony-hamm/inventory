@@ -11,27 +11,55 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+
+  <div class="row">
+    <div class="col-md-3" >
+      <%= f.label :name%>
+    </div>
+    <div class="col-md-9">
+      <%= f.text_field :name, class: "form-text text-muted"%>
+    </div>
+    <br>
   </div>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="row">
+    <div class="col-md-3" >
+      <%= f.label :description%>
+    </div>
+    <div class="col-md-9">
+      <%= f.text_area :description, class: "form-text text-muted" %>
+    </div>
+    <br>
   </div>
 
-  <div class="field">
-    <%= f.label :administrator_id %>
-    <%= f.text_field :administrator_id %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :administrator_id%>
+    </div>
+    <div class="col-md-9">
+      <%= f.text_field :administrator_id, class: "form-text text-muted"%>
+    </div>
+    <br>
   </div>
 
-  <div class="field">
-    <%= f.label :clerk_id %>
-    <%= f.text_field :clerk_id %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :clerk_id%>
+    </div>
+    <div class="col-md-9">
+      <%= f.text_field :clerk_id, class: "form-text text-muted"%>
+    </div>
+    <br>
   </div>
 
+
+<div class="row">
+  <br>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+</div>
+
+
 <% end %>

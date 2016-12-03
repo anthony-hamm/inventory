@@ -1,33 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Stores</h1>
+<h1>Tiendas</h1>
 
-<table class="table datatable table-bordered talbe-striped">
+<br>
+
+<table class="table datatable table-bordered talbe-striped table-condensed table-hover text-center">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Administrator</th>
-      <th>Clerk</th>
-      <th></th>
-    </tr>
+  <tr>
+    <th class="text-center">Tienda</th>
+    <th class="text-center">Descripcion</th>
+    <th class="text-center">Administrador</th>
+    <th class="text-center">Dependiente</th>
+    <th class="text-center">Acciones</th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @stores.each do |store| %>
+  <% @stores.each do |store| %>
       <tr>
         <td><%= store.name %></td>
         <td><%= store.description %></td>
         <td><%= store.administrator_id %></td>
         <td><%= store.clerk_id %></td>
-        <td><%= link_to 'Show', store %>
-        <%= link_to 'Edit', edit_store_path(store) %>
-        <%= link_to 'Destroy', store,  class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', store, class: "btn btn-primary" %>
+          <%= link_to 'Edit', edit_store_path(store), class: "btn btn-primary" %>
+          <%= link_to 'Destroy', store,  class: "btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Eliminar la Tienda?' } %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Store', new_store_path %>
+<%= link_to 'New Store', new_store_path ,  class: "btn btn-primary"%>

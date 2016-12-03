@@ -17,6 +17,8 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require bootstrap-select
+
 $(document).ready(function() {
 	$('.datatable').DataTable({
 		"dom": '<"top"i>rt<"bottom"flp><"clear">',
@@ -44,4 +46,5 @@ $(document).ready(function() {
             }
         }
     });
+    $('select').selectpicker();
 });
