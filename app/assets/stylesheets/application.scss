@@ -14,9 +14,13 @@
  *= require_self
  */
 
+
+
 /* "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-select";
 
 /*Jquery data tables*/
 @import "dataTables/bootstrap/3/jquery.dataTables.bootstrap";
+a:visited{color: #FFFFFF}
