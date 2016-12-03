@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Entries</h1>
+
+<table class="table datatable table-bordered talbe-striped">
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td><%= entry.store_id %></td>
+        <td><%= entry.item_id %></td>
+        <td><%= entry.quantity %></td>
+        <td><%= link_to 'Show', entry %>
+        <%= link_to 'Edit', edit_entry_path(entry) %>
+        <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_entry_path %>
