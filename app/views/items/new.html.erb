@@ -1,5 +1,7 @@
-<h1>New Item</h1>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4>Articulo</h4>
+  </div>
+  <%= render 'form', item: @item %>
+</div>
 
-<%= render 'form', item: @item %>
-
-<%= link_to 'Back', items_path %>

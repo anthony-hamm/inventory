@@ -1,24 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3>Informacion de la Venta</h3>
+  </div>
+  <div class="panel-body">
+    <p id="notice">
+      <%= notice %>
+    </p>
+    <table class="table table-striped">
+      <tr>
+        <td><strong>Tienda:</strong></td>
+        <td><%= @sale.store_id%></td>
+      </tr>
+      <tr>
+        <td><strong>Item:</strong></td>
+        <td><%= @sale.item_id %></td>
+      </tr>
+      <tr>
+        <td><strong>Cantidad</strong></td>
+        <td><%= @sale.quantity %></td>
+      </tr>
+      <tr>
+        <td><strong>Precio de Venta</strong></td>
+        <td><%= @sale.sale_price %></td>
+      </tr>
+    </table>
+  </div>
 
-<p>
-  <strong>Store:</strong>
-  <%= @sale.store_id %>
-</p>
+  <div class="panel-footer">
+    <div class="row text-right">
+      <%= link_to 'Edit', edit_sale_path(@sale), class: "btn btn-primary" %>
+      <%= link_to 'Back', sales_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Item:</strong>
-  <%= @sale.item_id %>
-</p>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @sale.quantity %>
-</p>
 
-<p>
-  <strong>Sale price:</strong>
-  <%= @sale.sale_price %>
-</p>
-
-<%= link_to 'Edit', edit_sale_path(@sale) %> |
-<%= link_to 'Back', sales_path %>

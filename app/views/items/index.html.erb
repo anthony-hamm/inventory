@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Items</h1>
+<h1>Articulos</h1>
 
-<table  class="table datatable table-bordered talbe-striped">
+<table  class="table datatable table-bordered table-striped table-condensed table-hover text-center">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th></th>
+      <th class="text-center">Nombre</th>
+      <th class="text-center">Descripcion</th>
+      <th class="text-center">Precio</th>
+      <th class="text-center">Acciones</th>
     </tr>
   </thead>
 
@@ -18,9 +18,9 @@
         <td><%= item.name %></td>
         <td><%= item.description %></td>
         <td><%= item.price %></td>
-        <td><%= link_to 'Show', item %>
-        <%= link_to 'Edit', edit_item_path(item) %>
-        <%= link_to 'Destroy', item, class: "btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', item, class:"btn btn-primary" %>
+        <%= link_to 'Edit', edit_item_path(item), class:"btn btn-primary" %>
+        <%= link_to 'Destroy', item, class: "btn btn-danger", method: :delete, data: { confirm: 'Esta Seguro de Eliminar el Articulo?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Item', new_item_path %>
+<%= link_to 'Nuevo Articulo', new_item_path, class:"btn btn-primary" %>

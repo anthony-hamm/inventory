@@ -1,5 +1,8 @@
-<h1>New Entry</h1>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4>Nuevo Ingreso</h4>
+  </div>
+  <%= render 'form', entry: @entry %>
+</div>
 
-<%= render 'form', entry: @entry %>
 
-<%= link_to 'Back', entries_path %>

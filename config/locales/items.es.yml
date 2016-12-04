@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    attributes:
+      item:
+        name: "Nombre"
+        description: "Descripcion"
+        price: "Precio"

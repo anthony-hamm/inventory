@@ -1,37 +1,55 @@
 <%= form_for(sale) do |f| %>
-  <% if sale.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+    <div class="panel-body">
+      <% if sale.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
 
-      <ul>
-      <% sale.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+              <% sale.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
+      <div class="form-horizontal">
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :store_id %>
+          </div>
+          <div class="col-sm-9">
+            <%= f.number_field :store_id, class:"form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :item_id %>
+          </div>
+          <div class="col-sm-9">
+            <%= f.number_field :item_id, class:"form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :quantity %>
+          </div>
+          <div class="col-sm-9">
+            <%= f.number_field :quantity, class:"form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :sale_price %>
+          </div>
+          <div class="col-sm-9">
+            <%= f.text_field :sale_price, class:"form-control" %>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :store_id %>
-    <%= f.number_field :store_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :item_id %>
-    <%= f.number_field :item_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
-  </div>
-
-  <div class="field">
-    <%= f.label :sale_price %>
-    <%= f.text_field :sale_price %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="panel-footer">
+      <div class="row text-right">
+        <%= f.submit class: "btn btn-primary"%>
+        <%= link_to 'Back', sales_path, class: "btn btn-info" %>
+      </div>
+    </div>
 <% end %>

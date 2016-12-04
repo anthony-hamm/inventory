@@ -3,7 +3,6 @@
       <% if store.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
-
             <ul>
               <% store.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -11,7 +10,6 @@
             </ul>
           </div>
       <% end %>
-
       <div class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-2 control-label">
@@ -21,7 +19,6 @@
             <%= f.text_field :name, class:"form-control"%>
           </div>
         </div>
-
         <div class="form-group">
           <div class="col-sm-2 control-label">
             <%= f.label :description%>
@@ -30,7 +27,6 @@
             <%= f.text_area :description, class:"form-control"%>
           </div>
         </div>
-
         <div class="form-group">
           <div class="col-sm-2 control-label">
             <%= f.label :administrator_id%>
@@ -40,7 +36,6 @@
           </div>
           <br>
         </div>
-
         <div class="form-group">
           <div class="col-sm-2 control-label">
             <%= f.label :clerk_id%>
@@ -52,13 +47,10 @@
         </div>
       </div>
     </div>
-
     <div class="panel-footer">
       <div class="row text-right">
         <%= f.submit class: "btn btn-primary"%>
         <%= link_to 'Back', stores_path, class: "btn btn-info"%>
       </div>
     </div>
-
-
 <% end %>

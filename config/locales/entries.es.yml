@@ -1,0 +1,7 @@
+es:
+  activerecord:
+    attributes:
+      entry:
+        store_id: "Tienda"
+        item_id: "Articulo"
+        quantity: "Cantidad"
