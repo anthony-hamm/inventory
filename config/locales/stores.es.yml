@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    attributes:
+      store:
+        name: "Nombre"
+        description: "Descripcion"
+        administrator_id: "Administrador"
+        clerk_id: "Dependiente"
