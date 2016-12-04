@@ -11,13 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
-//= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
 //= require bootstrap-select
+
 
 $(document).ready(function() {
 	$('.datatable').DataTable({
@@ -48,3 +49,6 @@ $(document).ready(function() {
     });
     $('select').selectpicker();
 });
+
+//= require turbolinks
+
