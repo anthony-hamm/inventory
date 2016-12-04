@@ -25,29 +25,20 @@ class StoresController < ApplicationController
   # POST /stores.json
   def create
     @store = Store.new(store_params)
-
-    respond_to do |format|
-      if @store.save
-        format.html { redirect_to @store, notice: 'Store was successfully created.' }
-        format.json { render :show, status: :created, location: @store }
-      else
-        format.html { render :new }
-        format.json { render json: @store.errors, status: :unprocessable_entity }
-      end
+    if @store.save
+      redirect_to @store, notice: 'Store was successfully created.' 
+    else
+      render :new 
     end
   end
 
   # PATCH/PUT /stores/1
   # PATCH/PUT /stores/1.json
   def update
-    respond_to do |format|
-      if @store.update(store_params)
-        format.html { redirect_to @store, notice: 'Store was successfully updated.' }
-        format.json { render :show, status: :ok, location: @store }
-      else
-        format.html { render :edit }
-        format.json { render json: @store.errors, status: :unprocessable_entity }
-      end
+    if @store.update(store_params)
+      redirect_to @store, notice: 'Store was successfully updated.' 
+    else
+      render :edit 
     end
   end
 
@@ -55,9 +46,7 @@ class StoresController < ApplicationController
   # DELETE /stores/1.json
   def destroy
     @store.destroy
-    respond_to do |format|
-      format.html { redirect_to stores_url, notice: 'Store was successfully delete.' }
-      format.json { head :no_content }
+      redirect_to stores_url, notice: 'Store was successfully delete.' 
     end
   end
 
