@@ -25,29 +25,20 @@ class EntriesController < ApplicationController
   # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
-
-    respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render :show, status: :created, location: @entry }
-      else
-        format.html { render :new }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    if @entry.save
+      redirect_to @entry, notice: 'Entry was successfully created.' 
+    else
+      render :new 
     end
   end
 
   # PATCH/PUT /entries/1
   # PATCH/PUT /entries/1.json
   def update
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-        format.json { render :show, status: :ok, location: @entry }
-      else
-        format.html { render :edit }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
-      end
+    if @entry.update(entry_params)
+      redirect_to @entry, notice: 'Entry was successfully updated.' 
+    else
+      render :edit 
     end
   end
 
@@ -55,9 +46,7 @@ class EntriesController < ApplicationController
   # DELETE /entries/1.json
   def destroy
     @entry.destroy
-    respond_to do |format|
-      format.html { redirect_to entries_url, notice: 'Entry was successfully destroyed.' }
-      format.json { head :no_content }
+      redirect_to entries_url, notice: 'Entry was successfully destroyed.' 
     end
   end
 
