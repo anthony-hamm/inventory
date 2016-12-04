@@ -60,4 +60,3 @@ class StoresController < ApplicationController
     def store_params
       params.require(:store).permit(:name, :description, :administrator_id, :clerk_id)
     end
-end

@@ -60,4 +60,4 @@ class EntriesController < ApplicationController
     def entry_params
       params.require(:entry).permit(:store_id, :item_id, :quantity)
     end
-end
+
