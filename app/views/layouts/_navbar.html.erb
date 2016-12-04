@@ -14,14 +14,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li class="<%= active_menu_item("#")%>"><a href="#">Ingresar Mercadería</a></li>
-        <li class="<%= active_menu_item("#")%>"><a href="#">Registrar Venta</a></li>
+        <li class="<%= active_menu_item(entries_path)%>"> <%= link_to('Ingresar Mercadería', entries_path) %> </li>
+        <li class="<%= active_menu_item(sales_path)%>"> <%= link_to('Registrar Venta', sales_path)%> </li>
         <li class="<%= active_menu_item("#")%>"><a href="#">Generar Inventario</a></li>
         <li class="<%= active_menu_item("#")%>" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrador <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="<%= active_menu_item(stores_path)%>"><%= link_to('Tiendas', stores_path)%></li>
-            <li class="<%= active_menu_item("#")%>"><a href="#">Artículos</a></li>
+            <li class="<%= active_menu_item(stores_path)%>"> <%= link_to('Tiendas', stores_path)%> </li>
+            <li class="<%= active_menu_item(items_path)%>"> <%= link_to('Articulos', items_path) %> </li>
           </ul>
         </li>
       </ul>
