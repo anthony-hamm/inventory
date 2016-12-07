@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Entries</h1>
+<h1>Ingresos</h1>
 
-<table class="table datatable table-bordered talbe-striped">
+<table class="table datatable table-bordered table-striped table-condensed table-hover text-center">
   <thead>
     <tr>
-      <th>Store</th>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th></th>
+      <th class="text-center">Tienda</th>
+      <th class="text-center">Articulo</th>
+      <th class="text-center">Cantidad</th>
+      <th class="text-center">Acciones</th>
     </tr>
   </thead>
 
@@ -18,9 +18,9 @@
         <td><%= entry.store_id %></td>
         <td><%= entry.item_id %></td>
         <td><%= entry.quantity %></td>
-        <td><%= link_to 'Show', entry %>
-        <%= link_to 'Edit', edit_entry_path(entry) %>
-        <%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', entry, class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_entry_path(entry), class: "btn btn-primary" %>
+        <%= link_to 'Destroy', entry, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Eliminar la Entrada?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Entry', new_entry_path %>
+<%= link_to 'Nuevo Ingreso Mercaderia', new_entry_path, class: "btn btn-primary" %>

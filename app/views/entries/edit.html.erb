@@ -1,6 +1,8 @@
-<h1>Editing Entry</h1>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3>Editar Ingreso</h3>
+  </div>
+  <%= render 'form', entry: @entry %>
+</div>
+</div>
 
-<%= render 'form', entry: @entry %>
-
-<%= link_to 'Show', @entry %> |
-<%= link_to 'Back', entries_path %>

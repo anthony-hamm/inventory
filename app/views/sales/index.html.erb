@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sales</h1>
+<h1>Ventas</h1>
 
-<table class="table datatable table-bordered talbe-striped">
+<table class="table datatable table-bordered table-striped table-condensed table-hover text-center">
   <thead>
     <tr>
-      <th>Store</th>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Sale price</th>
-      <th></th>
+      <th class="text-center">Tienda</th>
+      <th class="text-center">Articulo</th>
+      <th class="text-center">Cantidad</th>
+      <th class="text-center">Precio de Venta</th>
+      <th class="text-center">Acciones</th>
     </tr>
   </thead>
 
@@ -20,9 +20,9 @@
         <td><%= sale.item_id %></td>
         <td><%= sale.quantity %></td>
         <td><%= sale.sale_price %></td>
-        <td><%= link_to 'Show', sale %>
-        <%= link_to 'Edit', edit_sale_path(sale) %>
-        <%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', sale, class: "btn btn-primary" %>
+        <%= link_to 'Edit', edit_sale_path(sale), class: "btn btn-primary" %>
+        <%= link_to 'Destroy', sale, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Elimiar la Venta' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Sale', new_sale_path %>
+<%= link_to 'Reportar Venta', new_sale_path, class: "btn btn-primary" %>

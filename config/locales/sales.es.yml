@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    attributes:
+      sale:
+        store_id: "Codigo de Tienda"
+        item_id: "Codigo de Articulo"
+        quantity: "Cantidad"
+        sale_price: "Precio de Venta"

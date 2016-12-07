@@ -1,27 +1,33 @@
-<div class="container">
-  <div class="row">
-    <p id="notice"><%= notice %></p>
-
-    <p>
-      <strong>Name:</strong>
-      <%= @store.name %>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3>Informacion de la Tienda</h3>
+  </div>
+  <div class="panel-body">
+    <p id="notice">
+      <%= notice %>
     </p>
+    <table class="table table-striped">
+      <tr>
+        <td><strong>Nombre:</strong></td>
+        <td><%= @store.name%></td>
+      </tr>
+      <tr>
+        <td><strong>Descripcion</strong></td>
+        <td><%= @store.description %></td>
+      </tr>
+      <tr>
+        <td><strong>Administrador</strong></td>
+        <td><%= @store.administrator_id %></td>
+      </tr>
+      <tr>
+        <td><strong>Dependiente</strong></td>
+        <td><%= @store.clerk_id %></td>
+      </tr>
+    </table>
+  </div>
 
-    <p>
-      <strong>Description:</strong>
-      <%= @store.description %>
-    </p>
-
-    <p>
-      <strong>Administrator:</strong>
-      <%= @store.administrator_id %>
-    </p>
-
-    <p>
-      <strong>Clerk:</strong>
-      <%= @store.clerk_id %>
-    </p>
-    <div class="row">
+  <div class="panel-footer">
+    <div class="row text-right">
       <%= link_to 'Edit', edit_store_path(@store), class: "btn btn-primary" %>
       <%= link_to 'Back', stores_path , class: "btn btn-info" %>
     </div>
