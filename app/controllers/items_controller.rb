@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   # GET /items/1
-  # GET /items/1.json
   def show
   end
 
@@ -22,43 +21,28 @@ class ItemsController < ApplicationController
   end
 
   # POST /items
-  # POST /items.json
   def create
     @item = Item.new(item_params)
-
-    respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
+        redirect_to @item, notice: 'Item was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
   end
 
   # PATCH/PUT /items/1
-  # PATCH/PUT /items/1.json
   def update
-    respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
+        redirect_to @item, notice: 'Item was successfully updated.' 
       else
-        format.html { render :edit }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        render :edit 
       end
-    end
   end
 
   # DELETE /items/1
-  # DELETE /items/1.json
   def destroy
     @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to items_url, notice: 'Item was successfully destroyed.' 
   end
 
   private

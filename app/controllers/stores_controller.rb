@@ -25,11 +25,11 @@ class StoresController < ApplicationController
   # POST /stores.json
   def create
     @store = Store.new(store_params)
-    if @store.save
-      redirect_to @store, notice: 'Store was successfully created.' 
-    else
-      render :new 
-    end
+      if @store.save
+        redirect_to @store, notice: 'Store was successfully created.' 
+      else
+        render :new 
+      end
   end
 
   # PATCH/PUT /stores/1
@@ -46,8 +46,7 @@ class StoresController < ApplicationController
   # DELETE /stores/1.json
   def destroy
     @store.destroy
-      redirect_to stores_url, notice: 'Store was successfully delete.' 
-    end
+    redirect_to stores_url, notice: 'Store was successfully delete.' 
   end
 
   private
@@ -60,3 +59,4 @@ class StoresController < ApplicationController
     def store_params
       params.require(:store).permit(:name, :description, :administrator_id, :clerk_id)
     end
+end

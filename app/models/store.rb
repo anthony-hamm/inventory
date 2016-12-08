@@ -1,4 +1,7 @@
 class Store < ApplicationRecord
+	#Associations for Users table
+	has_many :users
+
 	#Associations for Entries table
 	has_many :entries
 	has_many :items, through: :entries

@@ -16,8 +16,8 @@
   <tbody>
     <% @sales.each do |sale| %>
       <tr>
-        <td><%= sale.store_id %></td>
-        <td><%= sale.item_id %></td>
+        <td><%= sale.store.name unless sale.store.nil? %></td>
+        <td><%= sale.item.name unless sale.item.nil? %></td>
         <td><%= sale.quantity %></td>
         <td><%= sale.sale_price %></td>
         <td><%= link_to 'Show', sale, class: "btn btn-primary" %>

@@ -15,8 +15,9 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.store_id %></td>
-        <td><%= entry.item_id %></td>
+        <!-- <td><%= entry.store_id %></td> -->
+        <td><%= entry.store.name unless entry.store.nil? %></td>
+        <td><%= entry.item.name unless entry.store.nil? %></td>
         <td><%= entry.quantity %></td>
         <td><%= link_to 'Show', entry, class: "btn btn-primary" %>
         <%= link_to 'Edit', edit_entry_path(entry), class: "btn btn-primary" %>

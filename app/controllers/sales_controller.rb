@@ -2,13 +2,11 @@ class SalesController < ApplicationController
   before_action :set_sale, only: [:show, :edit, :update, :destroy]
 
   # GET /sales
-  # GET /sales.json
   def index
     @sales = Sale.all
   end
 
   # GET /sales/1
-  # GET /sales/1.json
   def show
   end
 
@@ -22,43 +20,29 @@ class SalesController < ApplicationController
   end
 
   # POST /sales
-  # POST /sales.json
   def create
     @sale = Sale.new(sale_params)
 
-    respond_to do |format|
       if @sale.save
-        format.html { redirect_to @sale, notice: 'Sale was successfully created.' }
-        format.json { render :show, status: :created, location: @sale }
+        redirect_to @sale, notice: 'Sale was successfully created.' 
       else
-        format.html { render :new }
-        format.json { render json: @sale.errors, status: :unprocessable_entity }
+        render :new 
       end
-    end
   end
 
   # PATCH/PUT /sales/1
-  # PATCH/PUT /sales/1.json
   def update
-    respond_to do |format|
       if @sale.update(sale_params)
-        format.html { redirect_to @sale, notice: 'Sale was successfully updated.' }
-        format.json { render :show, status: :ok, location: @sale }
+        redirect_to @sale, notice: 'Sale was successfully updated.' 
       else
-        format.html { render :edit }
-        format.json { render json: @sale.errors, status: :unprocessable_entity }
+        render :edit 
       end
-    end
   end
 
   # DELETE /sales/1
-  # DELETE /sales/1.json
   def destroy
     @sale.destroy
-    respond_to do |format|
-      format.html { redirect_to sales_url, notice: 'Sale was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to sales_url, notice: 'Sale was successfully destroyed.'
   end
 
   private
@@ -68,7 +52,7 @@ class SalesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def sale_params
+    def sale_params 
       params.require(:sale).permit(:store_id, :item_id, :quantity, :sale_price)
     end
 end

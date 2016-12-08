@@ -2,13 +2,11 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /entries
-  # GET /entries.json
   def index
     @entries = Entry.all
   end
 
   # GET /entries/1
-  # GET /entries/1.json
   def show
   end
 
@@ -22,7 +20,6 @@ class EntriesController < ApplicationController
   end
 
   # POST /entries
-  # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
     if @entry.save
@@ -33,7 +30,6 @@ class EntriesController < ApplicationController
   end
 
   # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
   def update
     if @entry.update(entry_params)
       redirect_to @entry, notice: 'Entry was successfully updated.' 
@@ -43,11 +39,9 @@ class EntriesController < ApplicationController
   end
 
   # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
     @entry.destroy
-      redirect_to entries_url, notice: 'Entry was successfully destroyed.' 
-    end
+    redirect_to entries_url, notice: 'Entry was successfully destroyed.' 
   end
 
   private
@@ -60,4 +54,5 @@ class EntriesController < ApplicationController
     def entry_params
       params.require(:entry).permit(:store_id, :item_id, :quantity)
     end
+end
 
