@@ -3,6 +3,7 @@
       <% if sale.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(sale.errors.count, "error") %> prohibited this sale from being saved:</h2>
+            
             <ul>
               <% sale.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
@@ -35,14 +36,6 @@
             <%= f.number_field :quantity, class:"form-control" %>
           </div>
         </div>
-        <!-- <div class="form-group">
-          <div class="col-sm-2 control-label">
-            <%= f.label :sale_price %>
-          </div>
-          <div class="col-sm-9">
-            <%= f.text_field :sale_price, class:"form-control" %>
-          </div>
-        </div> -->
       </div>
     </div>
     <div class="panel-footer">

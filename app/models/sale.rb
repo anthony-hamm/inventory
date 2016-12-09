@@ -4,8 +4,8 @@ class Sale < ApplicationRecord
 
 	before_save :calculate_sale_price
 
-	#after_save :reduce_stock
-
+	# after_save :reduce_stock
+	
 	#Private methods
 	protected
 
@@ -15,7 +15,8 @@ class Sale < ApplicationRecord
 	end	
 
 	#After the sale get saved the base stock should be reduce in order to keep 
-	#def reduce_stock
-	#	self.sale_price = quantity * item.price
-	#end	
+	# def reduce_stock
+	# 	self.sale_price = quantity * item.price
+	# end	
 end
+	
