@@ -22,9 +22,9 @@
         <td><%= store.description %></td>
         <td><%= store.administrator_id %></td>
         <td><%= store.clerk_id %></td>
-        <td><%= link_to 'Show', store, class: "btn btn-primary" %>
-          <%= link_to 'Edit', edit_store_path(store), class: "btn btn-primary" %>
-          <%= link_to 'Destroy', store,  class: "btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Eliminar la Tienda?' } %></td>
+        <td><%= link_to 'Mostrar', store, class: "btn btn-primary" %>
+          <%= link_to 'Editar', edit_store_path(store), class: "btn btn-primary" %>
+          <%= link_to 'Eliminar', store,  class: "btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Eliminar la Tienda?' } %></td>
       </tr>
   <% end %>
   </tbody>

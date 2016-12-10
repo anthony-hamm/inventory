@@ -20,9 +20,9 @@
         <td><%= sale.item.name unless sale.item.nil? %></td>
         <td><%= sale.quantity %></td>
         <td><%= sale.sale_price %></td>
-        <td><%= link_to 'Show', sale, class: "btn btn-primary" %>
-        <%= link_to 'Edit', edit_sale_path(sale), class: "btn btn-primary" %>
-        <%= link_to 'Destroy', sale, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Elimiar la Venta' } %></td>
+        <td><%= link_to 'Mostrar', sale, class: "btn btn-primary" %>
+        <%= link_to 'Editar', edit_sale_path(sale), class: "btn btn-primary" %>
+        <%= link_to 'Eliminar', sale, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Elimiar la Venta' } %></td>
       </tr>
     <% end %>
   </tbody>
