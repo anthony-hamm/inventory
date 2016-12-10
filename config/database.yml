@@ -21,9 +21,12 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<:
+  <<: *default
   database: db/production.pg
   adapter: postgresql
-
+  host: localhost
+  user: a@a.com
+  password: Password1.
+  pool: 5
 
 
