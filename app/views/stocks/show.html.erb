@@ -1,19 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3>Informacion de la Venta</h3>
+	</div>
 
-<p>
-  <strong>Store:</strong>
-  <%= @stock.store_id %>
-</p>
+	<div class="panel-body">
+		<p id="notice">
+			<%= notice %>
+		</p>
 
-<p>
-  <strong>Item:</strong>
-  <%= @stock.item_id %>
-</p>
+		<table class="table table-striped">
+			<tr>
+				<td> <strong>Store:</strong> </td>
+				<td> <%= @stock.store_id %> </td>
+			</tr>
 
-<p>
-  <strong>Quantity:</strong>
-  <%= @stock.quantity %>
-</p>
+			<tr>
+				<td> <strong>Item:</strong> </td>
+				<td> <%= @stock.item_id %> </td>
+			</tr>
 
-<%= link_to 'Edit', edit_stock_path(@stock) %> 
-<%= link_to 'Back', stocks_path %>
+			<tr>
+				<td> <strong>Quantity:</strong> </td>
+				<td> <%= @stock.quantity %> </td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="panel-footer">
+		<div class="row text-right">
+			<%= link_to 'Edit', edit_stock_path(@stock), class: "btn btn-primary" %>
+			<%= link_to 'Back', stocks_path, class: "btn btn-info" %>
+		</div>
+	</div>
+</div>

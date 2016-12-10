@@ -13,10 +13,14 @@ class EntriesController < ApplicationController
   # GET /entries/new
   def new
     @entry = Entry.new
+    @store = Store.all
+    @item = Item.all
   end
 
   # GET /entries/1/edit
   def edit
+    @store = Store.all
+    @item = Item.all
   end
 
   # POST /entries

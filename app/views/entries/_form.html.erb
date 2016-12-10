@@ -10,33 +10,44 @@
             </ul>
           </div>
       <% end %>
+
+      <!-- Store Form field -->
       <div class="form-horizontal">
         <div class="form-group">
           <div class="col-sm-2 control-label">
             <%= f.label :store_id %>
           </div>
           <div class="col-sm-9">
-            <%= f.number_field :store_id, class:"form-control" %>
+            <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+            <%= f.select :store_id, options_for_select( @store.map { |store| 
+              [store.name, store.id] }), :include_blank => "Seleccionar Tienda", class:"form-control" %>
           </div>
         </div>
+
+        <!-- Item Form field -->
         <div class="form-group">
           <div class="col-sm-2 control-label">
             <%= f.label :item_id %>
           </div>
           <div class="col-sm-9">
-            <%= f.number_field :item_id, class:"form-control" %>
+            <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+            <%= f.select :item_id, options_for_select( @item.map { |item| 
+              [item.name, item.id] }), :include_blank => "Seleccionar Articulo", class:"form-control" %>
           </div>
         </div>
+
+        <!-- Quantity Form field -->
         <div class="form-group">
           <div class="col-sm-2 control-label">
             <%= f.label :quantity %>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-2">
             <%= f.number_field :quantity, class:"form-control" %>
           </div>
         </div>
       </div>
     </div>
+
     <div class="panel-footer">
       <div class="row text-right">
         <%= f.submit class: "btn btn-primary"%>

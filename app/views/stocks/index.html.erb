@@ -20,7 +20,7 @@
         <td><%= stock.quantity %></td>
         <td><%= link_to 'Show', stock, class: "btn btn-primary" %>
         <%= link_to 'Edit', edit_stock_path(stock), class: "btn btn-primary" %>
-        <%= link_to 'Destroy', stock, class:"btn btn-danger", data: { confirm: 'Are you sure?' } %></td>
+        <%= link_to 'Destroy', stock, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Elimiar la Venta' } %></td>
       </tr>
     <% end %>
   </tbody>
