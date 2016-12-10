@@ -8,7 +8,7 @@
       <th class="text-center">Tienda</th>
       <th class="text-center">Articulo</th>
       <th class="text-center">Cantidad</th>
-      <th class="text-center">Acciones</th>
+<!--       <th class="text-center">Acciones</th> -->
     </tr>
   </thead>
 
@@ -18,9 +18,9 @@
         <td><%= stock.store.name unless stock.store.nil? %></td>
         <td><%= stock.item.name unless stock.item.nil? %></td>
         <td><%= stock.quantity %></td>
-        <td><%= link_to 'Show', stock, class: "btn btn-primary" %>
+<!--         <td><%= link_to 'Show', stock, class: "btn btn-primary" %>
         <%= link_to 'Edit', edit_stock_path(stock), class: "btn btn-primary" %>
-        <%= link_to 'Destroy', stock, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Elimiar la Venta' } %></td>
+        <%= link_to 'Destroy', stock, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Elimiar la Venta' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Stock', new_stock_path, class: "btn btn-primary" %>
+<!-- <%= #link_to 'New Stock', new_stock_path, class: "btn btn-primary" %> -->
