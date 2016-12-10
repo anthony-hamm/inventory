@@ -11,14 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+<!--   <div class="field">
     <%= f.label :store_id %>
     <%= f.number_field :store_id %>
+  </div> -->
+
+
+
+
+  <div class="field">
+      <%= f.label :store_id %>
+      <%= f.select :store_id, options_for_select( @stores.map { |store| [store.name, store.id] }), :include_blank => "Selectionar Tienda" %>
   </div>
 
   <div class="field">
     <%= f.label :item_id %>
-    <%= f.number_field :item_id %>
+    <%= f.select :item_id, options_for_select( @items.map { |item| [item.name, item.id] }), :include_blank => "Selectionar Articulo" %>
   </div>
 
   <div class="field">

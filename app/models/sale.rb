@@ -3,6 +3,7 @@ class Sale < ApplicationRecord
 	belongs_to :store
 
 	before_save :calculate_sale_price
+	after_save :update_stock, on: :create
 
 	# after_save :reduce_stock
 	
@@ -15,8 +16,10 @@ class Sale < ApplicationRecord
 	end	
 
 	#After the sale get saved the base stock should be reduce in order to keep 
-	# def reduce_stock
-	# 	self.sale_price = quantity * item.price
-	# end	
+	def update_stock
+		stock = Stock.where(store_id: self.store_id, item_id: self.item_id).first
+		stock.quantity -= quantity
+		stock.save
+	end	
 end
 	

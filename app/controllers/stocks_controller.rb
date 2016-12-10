@@ -15,6 +15,8 @@ class StocksController < ApplicationController
   # GET /stocks/new
   def new
     @stock = Stock.new
+    @stores = Store.all
+    @items = Item.all
   end
 
   # GET /stocks/1/edit
