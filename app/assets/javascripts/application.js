@@ -22,7 +22,7 @@
 
 $(document).ready(function() {
 	$('.datatable').DataTable({
-		"dom": '<"top"i>rt<"bottom"flp><"clear">',
+		"dom": '<"top"if>rt<"bottom"lp><"clear">',
 		/*httpsÑ--datatables.net-examples-basic?init-dom.html*/
 
 		"order": [[ 0, "desc" ]],
