@@ -19,8 +19,7 @@ class StoresController < ApplicationController
 
 	# GET /stores/1/edit
 	def edit
-		@store = Store.all
-		@item = Item.all
+		@store = Store.find(params[:id])
 	end
 
 	# POST /stores
@@ -28,9 +27,9 @@ class StoresController < ApplicationController
 	def create
 		@store = Store.new(store_params)
 			if @store.save
-				redirect_to @store, notice: 'Store was successfully created.' 
+				redirect_to @store, notice: 'Store was successfully created.'
 			else
-				render :new 
+				render :new
 			end
 	end
 
@@ -38,9 +37,9 @@ class StoresController < ApplicationController
 	# PATCH/PUT /stores/1.json
 	def update
 		if @store.update(store_params)
-			redirect_to @store, notice: 'Store was successfully updated.' 
+			redirect_to @store, notice: 'Store was successfully updated.'
 		else
-			render :edit 
+			render :edit
 		end
 	end
 
@@ -48,7 +47,7 @@ class StoresController < ApplicationController
 	# DELETE /stores/1.json
 	def destroy
 		@store.destroy
-		redirect_to stores_url, notice: 'Store was successfully delete.' 
+		redirect_to stores_url, notice: 'Store was successfully delete.'
 	end
 
 	private

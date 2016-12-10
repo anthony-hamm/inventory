@@ -3,7 +3,7 @@ class Entry < ApplicationRecord
 	belongs_to :store
 
 	after_save :update_stock, on: :create
-	
+
 	#Private methods
 	protected
 
@@ -11,7 +11,8 @@ class Entry < ApplicationRecord
 	def update_stock
 		stock = Stock.where(store_id: self.store_id, item_id: self.item_id).first
 		# stock.update(:quantity => quantity)
+		return if stock.blank?
 		stock.quantity += quantity
 		stock.save
-	end	
+	end
 end
