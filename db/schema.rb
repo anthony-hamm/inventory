@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 20161210061954) do
   create_table "stores", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "administrator_id"
-    t.integer  "clerk_id"
+    t.string   "administrator_id"
+    t.string   "clerk_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
