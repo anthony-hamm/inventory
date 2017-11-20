@@ -1,22 +1,24 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<br>
 
-<table>
+<h1>Usuarios</h1>
+
+<table class="table datatable table-bordered table-striped table-condensed table-hover text-center">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Comments</th>
-      <th>Password</th>
-      <th>Rol</th>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Comments</th>
+    <th>Password</th>
+    <th>Rol</th>
+    <th colspan="3"></th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
         <td><%= user.phone %></td>
@@ -24,14 +26,14 @@
         <td><%= user.comments %></td>
         <td><%= user.password %></td>
         <td><%= user.rol %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', user, class: "btn btn-primary" %>
+          <%= link_to 'Editar', edit_user_path(user), class: "btn btn-primary" %>
+          <%= link_to 'Eliminar', user, class: "btn btn-danger", method: :delete, data: {confirm: 'Estas Seguro de Eliminar el Usuario?'} %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Crear Usuario', new_user_path, class: "btn btn-primary" %>

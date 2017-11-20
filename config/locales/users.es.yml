@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    attributes:
+      user:
+        name: "Nombre"
+        phone: "Telefono"
+        email: "Correo"
+        comments: "Comentarios"
+        password: "Contrasena"
+        rol: "Rol"
