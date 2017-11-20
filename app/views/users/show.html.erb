@@ -1,34 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3>Informacion del Usuario</h3>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <div class="panel-body">
+    <p id="notice">
+      <%= notice %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
+    <table class="table table-striped">
+      <tr>
+        <td><strong>Nombre:</strong></td>
+        <td><%= @user.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Telefono</strong></td>
+        <td><%= @user.phone %></td>
+      </tr>
+      <tr>
+        <td><strong>Correo</strong></td>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td><strong>Comentarios</strong></td>
+        <td><%= @user.comments %></td>
+      </tr>
+      <tr>
+        <td><strong>Contrasena</strong></td>
+        <td><%= @user.password %></td>
+      </tr>
+      <tr>
+        <td><strong>Rol</strong></td>
+        <td><%= @user.rol %></td>
+      </tr>
+    </table>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <div class="panel-footer">
+    <div class="row text-right">
+      <%= link_to 'Editar', edit_user_path(@user), class: "btn btn-primary" %>
+      <%= link_to 'Atrás', users_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Comments:</strong>
-  <%= @user.comments %>
-</p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
 
-<p>
-  <strong>Rol:</strong>
-  <%= @user.rol %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

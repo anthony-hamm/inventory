@@ -1,47 +1,76 @@
 <%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    <div class="panel-body">
+      <% if user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+              <% user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
+      <div class="form-horizontal">
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :name %>
+          </div>
+          <div class="col-sm-9">
+            <%= f.text_field :name, class: "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :phone %>
+          </div>
+          <div class="col-sm-9">
+            <%= f.number_field :phone %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :email %>
+          </div>
+          <div class="col-sm-9">
+            <%= f.text_field :email %>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :comments %>
+          </div>
+          <div class="col-md-9">
+            <%= f.text_field :comments %>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :password %>
+          </div>
+          <div class="col-md-9">
+            <%= f.text_field :password %>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :rol %>
+          </div>
+          <div class="col-md-9">
+            <%= f.text_field :rol %>
+          </div>
+          <br>
+        </div>
+      </div>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.number_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :comments %>
-    <%= f.number_field :comments %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.text_field :password %>
-  </div>
-
-  <div class="field">
-    <%= f.label :rol %>
-    <%= f.number_field :rol %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="panel-footer">
+      <div class="row text-right">
+        <%= f.submit class: "btn btn-primary" %>
+        <%= link_to 'Atrás', users_path, class: "btn btn-info" %>
+      </div>
+    </div>
 <% end %>
