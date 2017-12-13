@@ -1,4 +1,8 @@
 class User < ApplicationRecord
-	#Associations for Stores table
+
+	# Handles password, encryption, validation
+	has_secure_password
+
+	# Associations for Stores table
 	has_many :stores
 end
