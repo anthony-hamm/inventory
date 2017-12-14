@@ -1,11 +1,14 @@
 class AccessController < ApplicationController
 
+
+
   def menu
-    " display text & links"
+    # display text & links
   end
 
   def login
-
+    # login form
+    render :layout => false
   end
 
   def attempt_login
