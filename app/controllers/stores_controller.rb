@@ -27,7 +27,7 @@ class StoresController < ApplicationController
 	def create
 		@store = Store.new(store_params)
 			if @store.save
-				redirect_to @store, notice: 'Store was successfully created.'
+				redirect_to @store, notice: 'La Tienda fue creada de forma exitosa.'
 			else
 				render :new
 			end
@@ -37,7 +37,7 @@ class StoresController < ApplicationController
 	# PATCH/PUT /stores/1.json
 	def update
 		if @store.update(store_params)
-			redirect_to @store, notice: 'Store was successfully updated.'
+			redirect_to @store, notice: 'La Tienda fue actualizada de forma exitosa.'
 		else
 			render :edit
 		end
@@ -47,7 +47,7 @@ class StoresController < ApplicationController
 	# DELETE /stores/1.json
 	def destroy
 		@store.destroy
-		redirect_to stores_url, notice: 'Store was successfully delete.'
+		redirect_to stores_url, notice: 'La Tienda fue borrada de forma exitosa.'
 	end
 
 	private

@@ -13,4 +13,9 @@ class Store < ApplicationRecord
 	#Associations for Stock table
 	has_many :stocks
 	has_many :items, through: :stocks
+
+	#Validations
+	validates :name, :presence => {:message => 'es un campo requerido'}
+	validates :administrator_id, :presence => {:message => 'es un campo requerido'}
+
 end

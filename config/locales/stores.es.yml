@@ -3,6 +3,6 @@ es:
     attributes:
       store:
         name: "Nombre"
-        description: "Descripcion"
+        description: "Descripción"
         administrator_id: "Administrador"
         clerk_id: "Dependiente"
