@@ -28,7 +28,7 @@ class SalesController < ApplicationController
 		@sale = Sale.new(sale_params)
 
 			if @sale.save
-				redirect_to @sale, notice: 'Sale was successfully created.' 
+				redirect_to @sale, notice: 'Venta creada de forma exitiosa.'
 			else
 				render :new 
 			end
@@ -37,7 +37,7 @@ class SalesController < ApplicationController
 	# PATCH/PUT /sales/1
 	def update
 			if @sale.update(sale_params)
-				redirect_to @sale, notice: 'Sale was successfully updated.' 
+				redirect_to @sale, notice: 'Venta actualizada de forma exitosa.'
 			else
 				render :edit 
 			end
@@ -46,7 +46,7 @@ class SalesController < ApplicationController
 	# DELETE /sales/1
 	def destroy
 		@sale.destroy
-		redirect_to sales_url, notice: 'Sale was successfully destroyed.'
+		redirect_to sales_url, notice: 'Venta eliminada de forma exitosa.'
 	end
 
 	private

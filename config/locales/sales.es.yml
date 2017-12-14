@@ -2,7 +2,7 @@ es:
   activerecord:
     attributes:
       sale:
-        store_id: "Codigo de Tienda"
-        item_id: "Codigo de Articulo"
+        store_id: "Código de Tienda"
+        item_id: "Código de Artículo"
         quantity: "Cantidad"
         sale_price: "Precio de Venta"
