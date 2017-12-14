@@ -8,7 +8,7 @@
   <thead>
   <tr>
     <th class="text-center">Tienda</th>
-    <th class="text-center">Descripcion</th>
+    <th class="text-center">Descripción</th>
     <th class="text-center">Administrador</th>
     <th class="text-center">Dependiente</th>
     <th class="text-center">Acciones</th>
@@ -23,7 +23,7 @@
         <td><%= store.administrator_id %></td>
         <td><%= store.clerk_id %></td>
         <td><%= link_to 'Mostrar', store, class: "btn btn-primary" %>
-          <%= link_to 'Editar', edit_store_path(store), class: "btn btn-primary" %>
+          <%= link_to 'Modificar', edit_store_path(store), class: "btn btn-primary" %>
           <%= link_to 'Eliminar', store,  class: "btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Eliminar la Tienda?' } %></td>
       </tr>
   <% end %>
