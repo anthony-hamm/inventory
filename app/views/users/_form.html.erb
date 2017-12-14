@@ -2,7 +2,7 @@
     <div class="panel-body">
       <% if user.errors.any? %>
           <div id="error_explanation">
-            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+            <h4>El formulario contiene los siguientes errores:</h4>
 
             <ul>
               <% user.errors.full_messages.each do |message| %>
@@ -25,7 +25,7 @@
             <%= f.label :phone %>
           </div>
           <div class="col-sm-9">
-            <%= f.number_field :phone %>
+            <%= f.text_field :phone, class:"form-control" %>
           </div>
         </div>
         <div class="form-group">
@@ -33,7 +33,7 @@
             <%= f.label :email %>
           </div>
           <div class="col-sm-9">
-            <%= f.text_field :email %>
+            <%= f.text_field :email, class:"form-control" %>
           </div>
           <br>
         </div>
@@ -42,7 +42,7 @@
             <%= f.label :comments %>
           </div>
           <div class="col-md-9">
-            <%= f.text_field :comments %>
+            <%= f.text_area :comments, class:"form-control" %>
           </div>
           <br>
         </div>
@@ -51,7 +51,7 @@
             <%= f.label :password %>
           </div>
           <div class="col-md-9">
-            <%= f.text_field :password %>
+            <%= f.password_field :password, class:"form-control" %>
           </div>
           <br>
         </div>
@@ -60,7 +60,7 @@
             <%= f.label :rol %>
           </div>
           <div class="col-md-9">
-            <%= f.text_field :rol %>
+            <%= f.text_field :rol, class:"form-control" %>
           </div>
           <br>
         </div>
