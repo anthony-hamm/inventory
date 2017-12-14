@@ -6,5 +6,5 @@ es:
         phone: "Telefono"
         email: "Correo"
         comments: "Comentarios"
-        password: "Contrasena"
+        password: "Contraseña"
         rol: "Rol"
