@@ -30,7 +30,7 @@ class StocksController < ApplicationController
 	def create
 		@stock = Stock.new(stock_params)
 			if @stock.save
-				redirect_to @stock, notice: 'Stock was successfully created.' 
+				redirect_to @stock, notice: 'Inventario creado de forma exitosa.'
 			else
 				render :new 
 			end
@@ -40,7 +40,7 @@ class StocksController < ApplicationController
 	# PATCH/PUT /stocks/1.json
 	def update
 			if @stock.update(stock_params)
-				redirect_to @stock, notice: 'Stock was successfully updated.' 
+				redirect_to @stock, notice: 'Inventario actualizado de forma exitosa.'
 			else
 				render :edit 
 			end
@@ -50,7 +50,7 @@ class StocksController < ApplicationController
 	# DELETE /stocks/1.json
 	def destroy
 		@stock.destroy
-			redirect_to stocks_url, notice: 'Stock was successfully destroyed.' 
+			redirect_to stocks_url, notice: 'Inventario elimanado de forma exitosa.'
 	end
 
 	private

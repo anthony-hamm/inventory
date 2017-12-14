@@ -2,7 +2,7 @@
 	<div class="panel-body">
 		<% if stock.errors.any? %>
 			<div id="error_explanation">
-				<h2><%= pluralize(stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+        <h4>El formulario contiene los siguientes errores:</h4>
 
 				<ul>
 					<% stock.errors.full_messages.each do |message| %>
