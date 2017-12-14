@@ -39,10 +39,10 @@
         </div>
         <div class="form-group">
           <div class="col-sm-2 control-label">
-            <%= f.label :comments %>
+            <%= f.label :username %>
           </div>
-          <div class="col-md-9">
-            <%= f.text_area :comments, class:"form-control" %>
+          <div class="col-sm-9">
+            <%= f.text_field :username, class:"form-control" %>
           </div>
           <br>
         </div>
@@ -61,6 +61,15 @@
           </div>
           <div class="col-md-9">
             <%= f.text_field :rol_id, class:"form-control" %>
+          </div>
+          <br>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= f.label :comments %>
+          </div>
+          <div class="col-md-9">
+            <%= f.text_area :comments, class:"form-control" %>
           </div>
           <br>
         </div>
