@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Articulos</h1>
+<h1>Artículos</h1>
 
 <table  class="table datatable table-bordered table-striped table-condensed table-hover text-center">
   <thead>
     <tr>
       <th class="text-center">Nombre</th>
-      <th class="text-center">Descripcion</th>
+      <th class="text-center">Descripción</th>
       <th class="text-center">Precio</th>
       <th class="text-center">Acciones</th>
     </tr>
@@ -19,8 +19,8 @@
         <td><%= item.description %></td>
         <td><%= item.price %></td>
         <td><%= link_to 'Mostrar', item, class:"btn btn-primary" %>
-        <%= link_to 'Editar', edit_item_path(item), class:"btn btn-primary" %>
-        <%= link_to 'Eliminar', item, class: "btn btn-danger", method: :delete, data: { confirm: 'Esta Seguro de Eliminar el Articulo?' } %></td>
+        <%= link_to 'Modificar', edit_item_path(item), class:"btn btn-primary" %>
+        <%= link_to 'Eliminar', item, class: "btn btn-danger", method: :delete, data: { confirm: 'Esta Seguro de Eliminar el Artículo?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Nuevo Articulo', new_item_path, class:"btn btn-primary" %>
+<%= link_to 'Nuevo Artículo', new_item_path, class:"btn btn-primary" %>
