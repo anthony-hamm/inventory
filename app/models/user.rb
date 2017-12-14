@@ -17,6 +17,7 @@ class User < ApplicationRecord
 						:length => { :maximum => 100 , :message =>  'soporta una cantidad máxima de 100 letras '},
 						:format => {:with => EMAIL_REGEX , :message => ' no tiene un formato válido' },
 						:confirmation  => true
+	validates :username, :presence => {:message => 'es un campo requerido'}
 	validates :password, :presence => {:message => 'es un campo requerido'}
 	validates :rol_id, :presence => {:message => 'es un campo requerido'}
 
