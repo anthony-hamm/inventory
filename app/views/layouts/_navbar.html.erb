@@ -22,11 +22,17 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrador
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li class="<%= active_menu_item(stores_path) %>"> <%= link_to('Tiendas', stores_path) %> </li>
-            <li class="<%= active_menu_item(items_path) %>"> <%= link_to('Artículos', items_path) %> </li>
+            <li > <%= link_to('Tiendas', stores_path) %> </li>
+            <li > <%= link_to('Artículos', items_path) %> </li>
+            <li > <%= link_to('Cerrar Sesión', access_logout_path) %> </li>
           </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>

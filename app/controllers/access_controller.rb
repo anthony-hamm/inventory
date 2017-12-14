@@ -1,6 +1,6 @@
 class AccessController < ApplicationController
 
-
+  before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
   def menu
     # display text & links
@@ -25,7 +25,7 @@ class AccessController < ApplicationController
       redirect_to(access_menu_path)
     else
       flash.now[:notice] = "El Usuario o Clave son invalidos."
-      render('login')
+      redirect_to(access_login_path)
     end
   end
 
@@ -33,6 +33,17 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Ha cerrado sesión correctamente."
     redirect_to(access_login_path)
+  end
+
+
+  private
+
+  def confirm_logged_in
+    unless session[:user_id]
+      flash[:notice] = "Iniciar sesión primero."
+      redirect_to(access_login_path)
+      # redirect_to prevents the requested action from running
+    end
   end
 
 end

@@ -1,4 +1,6 @@
 class SalesController < ApplicationController
+
+	before_action :confirm_logged_in
 	before_action :set_sale, only: [:show, :edit, :update, :destroy]
 
 	# GET /sales

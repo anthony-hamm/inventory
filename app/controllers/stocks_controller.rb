@@ -1,4 +1,6 @@
 class StocksController < ApplicationController
+
+	before_action :confirm_logged_in
 	before_action :set_stock, only: [:show, :edit, :update, :destroy]
 
 	# GET /stocks

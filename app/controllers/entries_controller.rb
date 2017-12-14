@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+
+  before_action :confirm_logged_in
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /entries

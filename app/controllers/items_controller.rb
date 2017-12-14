@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+
+	before_action :confirm_logged_in
 	before_action :set_item, only: [:show, :edit, :update, :destroy]
 
 	# GET /items
