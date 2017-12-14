@@ -3,5 +3,5 @@ es:
     attributes:
       entry:
         store_id: "Tienda"
-        item_id: "Articulo"
+        item_id: "Artículo"
         quantity: "Cantidad"
