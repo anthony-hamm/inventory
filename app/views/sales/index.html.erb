@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th class="text-center">Tienda</th>
-      <th class="text-center">Articulo</th>
+      <th class="text-center">Artículo</th>
       <th class="text-center">Cantidad</th>
       <th class="text-center">Precio de Venta</th>
       <th class="text-center">Acciones</th>
@@ -21,7 +21,7 @@
         <td><%= sale.quantity %></td>
         <td><%= sale.sale_price %></td>
         <td><%= link_to 'Mostrar', sale, class: "btn btn-primary" %>
-        <%= link_to 'Editar', edit_sale_path(sale), class: "btn btn-primary" %>
+        <%= link_to 'Modificar', edit_sale_path(sale), class: "btn btn-primary" %>
         <%= link_to 'Eliminar', sale, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Elimiar la Venta' } %></td>
       </tr>
     <% end %>

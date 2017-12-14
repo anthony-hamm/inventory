@@ -10,4 +10,10 @@ class Item < ApplicationRecord
 	#Associations for Stock table
 	has_many :stocks
 	has_many :stores, through: :stocks
+
+	#Validations
+	validates :name, :presence => {:message => 'es un campo requerido'}
+	validates :description, :presence => {:message => 'es un campo requerido'}
+
 end
+

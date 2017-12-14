@@ -1,6 +1,6 @@
 <div class="panel panel-info">
 	<div class="panel-heading">
-		<h3>Informacion de la Venta</h3>
+		<h3>Información de la Venta</h3>
 	</div>
 	
 	<div class="panel-body">
@@ -15,7 +15,7 @@
 			</tr>
 
 			<tr>
-				<td><strong>Item:</strong></td>
+				<td><strong>Artículo:</strong></td>
 				<td><%= @sale.item.name %></td>
 			</tr>
 
@@ -33,7 +33,7 @@
 
 	<div class="panel-footer">
 		<div class="row text-right">
-			<%= link_to 'Editar', edit_sale_path(@sale), class: "btn btn-primary" %>
+			<%= link_to 'Modificar', edit_sale_path(@sale), class: "btn btn-primary" %>
 			<%= link_to 'Atrás', sales_path, class: "btn btn-info" %>
 		</div>
 	</div>

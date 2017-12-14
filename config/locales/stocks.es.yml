@@ -1,7 +1,7 @@
 es:
   activerecord:
     attributes:
-      entry:
+      stock:
         store_id: "Tienda"
         item_id: "Artículo"
         quantity: "Cantidad"

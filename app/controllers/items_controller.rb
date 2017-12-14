@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
 	def create
 		@item = Item.new(item_params)
 			if @item.save
-				redirect_to @item, notice: 'Item was successfully created.'
+				redirect_to @item, notice: 'Artículo creado de forma exitosa.'
 			else
 				render :new
 			end
@@ -34,7 +34,7 @@ class ItemsController < ApplicationController
 	# PATCH/PUT /items/1
 	def update
 			if @item.update(item_params)
-				redirect_to @item, notice: 'Item was successfully updated.'
+				redirect_to @item, notice: 'Artículo actualizado de forma exitosa'
 			else
 				render :edit
 			end
@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
 	# DELETE /items/1
 	def destroy
 		@item.destroy
-			redirect_to items_url, notice: 'Item was successfully destroyed.'
+			redirect_to items_url, notice: 'Artículo elimanado de forma exitosa.'
 	end
 
 	private

@@ -3,5 +3,5 @@ es:
     attributes:
       item:
         name: "Nombre"
-        description: "Descripcion"
+        description: "Descripción"
         price: "Precio"
