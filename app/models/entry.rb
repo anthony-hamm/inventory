@@ -7,7 +7,7 @@ class Entry < ApplicationRecord
 	#Private methods
 	protected
 
-	#After the entry get saved the base stock should be increase in order to keep the consistency of the stock
+	# After the entry get saved the base stock should be increase in order to keep the consistency of the stock
 	def update_stock
 		stock = Stock.where(store_id: self.store_id, item_id: self.item_id).first
 		# stock.update(:quantity => quantity)
