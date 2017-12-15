@@ -55,11 +55,11 @@ class StoresController < ApplicationController
 	private
 		# Use callbacks to share common setup or constraints between actions.
 		def set_store
-			@store = Store.find(params[:id])
+			@store = Store.includes(stocks: :item).find(params[:id])
 		end
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def store_params
-			params.require(:store).permit(:name, :description, :administrator_id, :clerk_id)
+			params.require(:store).permit(:name, :description)
 		end
 end

@@ -15,14 +15,23 @@
         <td><strong>Descripcion</strong></td>
         <td><%= @store.description %></td>
       </tr>
+    </table>
+
+    <table class="table datatable table-bordered table-striped table-condensed table-hover text-center">
+      <thead>
       <tr>
-        <td><strong>Administrador</strong></td>
-        <td><%= @store.administrator_id %></td>
+        <th class="text-center">Articulo</th>
+        <th class="text-center">Cantidad</th>
       </tr>
-      <tr>
-        <td><strong>Dependiente</strong></td>
-        <td><%= @store.clerk_id %></td>
-      </tr>
+      </thead>
+      <tbody>
+      <% @store.stocks.each do |stock| %>
+          <tr>
+            <td><%= stock.item.name %></td>
+            <td><%= stock.quantity %></td>
+          </tr>
+      <% end %>
+      </tbody>
     </table>
   </div>
 
