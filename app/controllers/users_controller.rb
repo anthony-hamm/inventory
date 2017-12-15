@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :confirm_logged_in
+	before_action :confirm_logged_in, :set_stores
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	# GET /users
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
 	# GET /users/1/edit
 	def edit
-		@store = Store.all
+		@stores = Store.all
 		@item = Item.all
 	end
 
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 			if @user.save
 				redirect_to @user, notice: 'El Usuario fue creado de forma exitosa.'
 			else
+				@stores = Store.all
 				render :new 
 			end
 	end
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
 			if @user.update(user_params)
 				redirect_to @user, notice: 'El Usuario fue actualizado de forma exitosa.'
 			else
+				@stores = Store.all
 				render :edit 
 			end
 	end
@@ -57,6 +59,10 @@ class UsersController < ApplicationController
 
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def user_params
-			params.require(:user).permit(:name, :phone, :email, :comments, :password, :rol_id, :username)
+			params.require(:user).permit(:name, :phone, :email, :comments, :password, :rol_id, :username, store_ids: [])
+		end
+
+  	def set_stores
+			@stores = Store.all
 		end
 end

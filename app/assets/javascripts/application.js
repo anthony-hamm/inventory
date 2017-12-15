@@ -18,6 +18,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require bootstrap-select
+//= require bootstrap-multiselect
 
 
 $(document).ready(function() {

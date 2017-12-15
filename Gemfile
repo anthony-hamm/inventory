@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'bootstrap-multiselect-rails'
 
 gem 'jquery-datatables-rails', '~> 3.4'
 
