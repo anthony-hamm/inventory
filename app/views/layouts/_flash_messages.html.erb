@@ -1,0 +1,12 @@
+<% flash.each do |type, msg| %>
+  <% if [:notice, :alert, :error, :success].include?(type.to_sym) %>
+    <div class="alert alert-flash fade in alert-dismissable <%= bootstrap_class_for(type) %>">
+      <div class="container">
+        <a aria-label="Close" class="close" data-dismiss="alert">
+          &times;
+        </a>
+        <%= content_tag :div, msg, id: "flash_#{type}" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
