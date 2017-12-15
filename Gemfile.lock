@@ -39,10 +39,12 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
-    autoprefixer-rails (7.2.2)
+    autoprefixer-rails (7.2.3)
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-multiselect-rails (0.9.9)
+      rails (>= 4.0.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -176,6 +178,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
+  bootstrap-multiselect-rails
   bootstrap-sass (~> 3.3, >= 3.3.6)
   bootstrap-select-rails
   byebug

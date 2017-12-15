@@ -7,8 +7,6 @@ class AccessController < ApplicationController
   end
 
   def login
-    # login form
-    render :layout => false
   end
 
   def attempt_login
@@ -33,17 +31,6 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "Ha cerrado sesión correctamente."
     redirect_to(access_login_path)
-  end
-
-
-  private
-
-  def confirm_logged_in
-    unless session[:user_id]
-      flash[:notice] = "Iniciar sesión primero."
-      redirect_to(access_login_path)
-      # redirect_to prevents the requested action from running
-    end
   end
 
 end
