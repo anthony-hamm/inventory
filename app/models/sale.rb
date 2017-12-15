@@ -1,11 +1,14 @@
 class Sale < ApplicationRecord
+	include StockManagementConcern
 	belongs_to :item
 	belongs_to :store
 
 	before_save :calculate_sale_price
-	after_save :update_stock, on: :create
 
-	# after_save :reduce_stock
+	around_save :update_stock
+	before_destroy :increase_stock
+
+
 
 	#Private methods
 	protected
@@ -18,9 +21,8 @@ class Sale < ApplicationRecord
 
 	#After the sale get saved the base stock should be reduce in order to keep
 	def update_stock
-		stock = Stock.where(store_id: self.store_id, item_id: self.item_id).first
-		return if stock.blank?
-		stock.quantity -= quantity
-		stock.save
+		increase_stock unless new_record?
+		yield
+		decrease_stock
 	end
 end

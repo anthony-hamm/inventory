@@ -24,6 +24,23 @@
         <td><%= @store.clerk_id %></td>
       </tr>
     </table>
+
+    <table class="table datatable table-bordered table-striped table-condensed table-hover text-center">
+      <thead>
+      <tr>
+        <th class="text-center">Articulo</th>
+        <th class="text-center">Cantidad</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @store.stocks.each do |stock| %>
+          <tr>
+            <td><%= stock.item.name %></td>
+            <td><%= stock.quantity %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
   </div>
 
   <div class="panel-footer">

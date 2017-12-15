@@ -18,7 +18,6 @@ class User < ApplicationRecord
 						:format => {:with => EMAIL_REGEX , :message => ' no tiene un formato válido' },
 						:confirmation  => true
 	validates :username, :presence => {:message => 'es un campo requerido'}
-	validates :password, :presence => {:message => 'es un campo requerido'}
+	validates :password, :presence => {:message => 'es un campo requerido'}, if: -> (user) { user.new_record? }
 	validates :rol_id, :presence => {:message => 'es un campo requerido'}
-
 end
