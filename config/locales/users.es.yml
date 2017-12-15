@@ -8,3 +8,4 @@ es:
         comments: "Comentarios"
         password: "Contraseña"
         rol: "Rol"
+        store_ids: "Tiendas"
