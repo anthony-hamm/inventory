@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
 	#Associations for Users table
-	has_many :users
+	has_many :store_users
+	has_many :users, through: :store_users
 
 	#Associations for Entries table
 	has_many :entries
@@ -14,6 +15,4 @@ class Store < ApplicationRecord
 
 	#Validations
 	validates :name, :presence => {:message => 'es un campo requerido'}
-	validates :administrator_id, :presence => {:message => 'es un campo requerido'}
-
 end

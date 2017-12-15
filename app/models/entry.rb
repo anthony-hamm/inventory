@@ -9,7 +9,7 @@ class Entry < ApplicationRecord
 	#Private methods
 	protected
 
-	#After the entry get saved the base stock should be increase in order to keep the consistency of the stock
+	# After the entry get saved the base stock should be increase in order to keep the consistency of the stock
 	def update_stock
 		decrease_stock unless new_record?
 		yield
