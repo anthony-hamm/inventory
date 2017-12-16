@@ -17,7 +17,7 @@
         <td><%= entry.store.name unless entry.store.nil? %></td>
         <td><%= entry.item.name unless entry.store.nil? %></td>
         <td><%= entry.quantity %></td>
-        <td><%= link_to 'Mostrar', entry, class: "btn btn-primary" %>
+        <td><%= link_to 'Ver', entry, class: "btn btn-primary" %>
         <%= link_to 'Modificar', edit_entry_path(entry), class: "btn btn-primary" %>
         <%= link_to 'Eliminar', entry, class:"btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Eliminar el Ingreso?' } %></td>
       </tr>
