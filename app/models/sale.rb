@@ -7,6 +7,8 @@ class Sale < ApplicationRecord
 	around_save :update_stock
 	before_destroy :increase_stock
 
+  #Validations
+	validates_presence_of :store_id, :item, :quantity , :message => 'es un campo requerido'
 
 
 	#Private methods

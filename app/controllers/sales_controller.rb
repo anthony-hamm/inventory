@@ -32,6 +32,8 @@ class SalesController < ApplicationController
 			if @sale.save
 				redirect_to @sale, notice: 'Venta creada de forma exitiosa.'
 			else
+				@store = Store.all
+				@item = Item.all
 				render :new 
 			end
 	end
@@ -41,6 +43,8 @@ class SalesController < ApplicationController
 			if @sale.update(sale_params)
 				redirect_to @sale, notice: 'Venta actualizada de forma exitosa.'
 			else
+				@store = Store.all
+				@item = Item.all
 				render :edit 
 			end
 	end

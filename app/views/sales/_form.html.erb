@@ -20,7 +20,7 @@
 				<div class="col-sm-9">
 					<!--  Dynamic dropdown with Embedded Ruby (ERB) -->
 					<%= f.select :store_id, options_for_select( @store.map { |store| 
-						[store.name, store.id] }),  class:"form-control" %>
+						[store.name, store.id] }), :include_blank => "Seleccionar Tienda", class:"form-control" %>
 				</div>
 			</div>
 
@@ -31,7 +31,7 @@
 				<div class="col-sm-9">
 					<!--  Dynamic dropdown with Embedded Ruby (ERB) -->
 					<%= f.select :item_id, options_for_select( @item.map { |item| 
-						[item.name, item.id] }), class:"form-control" %>
+						[item.name, item.id] }), :include_blank => "Seleccionar Articulo", class:"form-control" %>
 				</div>
 			</div>
 
@@ -49,7 +49,7 @@
 	<div class="panel-footer">
 		<div class="row text-right">
 			<%= f.submit class: "btn btn-primary"%>
-			<%= link_to 'Atrás', sales_path, class: "btn btn-info" %>
+			<%= link_to 'Reporte de Ventas', sales_path, class: "btn btn-info" %>
 		</div>
 	</div>
 <% end %>
