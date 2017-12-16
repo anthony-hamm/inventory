@@ -31,6 +31,8 @@ class EntriesController < ApplicationController
     if @entry.save
       redirect_to @entry, notice: 'Ingreso creado exitosamente.'
     else
+      @store = Store.all
+      @item = Item.all
       render :new 
     end
   end
@@ -40,6 +42,8 @@ class EntriesController < ApplicationController
     if @entry.update(entry_params)
       redirect_to @entry, notice: 'Ingreso actualizado exitosamente.'
     else
+      @store = Store.all
+      @item = Item.all
       render :edit 
     end
   end
