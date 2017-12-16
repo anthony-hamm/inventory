@@ -22,9 +22,11 @@
         <td><%= user.comments %></td>
         <td><%= user.password %></td>
         <td><%= user.rol_id %></td>
-        <td><%= link_to 'Mostrar', user, class: "btn btn-primary" %>
+        <td>
+          <%= link_to 'Mostrar', user, class: "btn btn-primary" %>
           <%= link_to 'Modificar', edit_user_path(user), class: "btn btn-primary" %>
-          <%= link_to 'Eliminar', user, class: "btn btn-danger", method: :delete, data: {confirm: 'Estas Seguro de Eliminar el Usuario?'} %></td>
+          <%= link_to 'Eliminar', user, class: "btn btn-danger", method: :delete, data: {confirm: 'Estas Seguro de Eliminar el Usuario?'} %>
+        </td>
       </tr>
   <% end %>
   </tbody>

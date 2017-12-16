@@ -30,6 +30,10 @@
         <td><strong>Rol</strong></td>
         <td><%= @user.rol_id %></td>
       </tr>
+      <tr>
+        <td><strong>Store</strong></td>
+        <td><%= @user.stores.map(&:name).join(", ") %></td>
+      </tr>
     </table>
   </div>
 
