@@ -15,8 +15,8 @@ class User < ApplicationRecord
 	validates :phone, :numericality => {:message => 'acepta solo contenido numérico'}, if: -> (phone) {:phone.empty?}
 	validates :email, :length => { :maximum => 100 , :message =>  'soporta una cantidad máxima de 100 letras '},
 						:format => {:with => EMAIL_REGEX , :message => ' no tiene un formato válido' }, if: -> (email) {:email.empty?}
-	validates :username, :presence => {:message => 'es un campo requerido'}
+	validates :username, :presence => {:message => 'es un campo requerido'}, if: -> (user) { user.new_record? }
 	validates :password, :presence => {:message => 'es un campo requerido'}, if: -> (user) { user.new_record? }
 	validates :rol_id, :presence => {:message => 'es un campo requerido'}
-	validates :store_ids, :presence => {:message => 'es un campo requerido'}
+	validates :store_ids, :presence => {:message => 'es un campo requerido'}, if: -> (user) { user.new_record? }
 end

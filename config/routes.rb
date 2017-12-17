@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   get 'access/login'
   post 'access/attempt_login'
   get 'access/logout'
+  get 'users/:id/password_reset', :to => 'users#password_reset', :as => 'password_reset_users'
+  patch 'users/:id/password_reset', :to => 'users#update_password', :as => 'update_password_users'
+
 
   resources :users
   resources :stocks

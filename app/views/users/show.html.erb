@@ -19,14 +19,6 @@
         <td><%= @user.email %></td>
       </tr>
       <tr>
-        <td><strong>Comentarios</strong></td>
-        <td><%= @user.comments %></td>
-      </tr>
-      <tr>
-        <td><strong>Contrasena</strong></td>
-        <td><%= @user.password %></td>
-      </tr>
-      <tr>
         <td><strong>Rol</strong></td>
         <td><%= @user.rol_id %></td>
       </tr>
@@ -34,11 +26,16 @@
         <td><strong>Store</strong></td>
         <td><%= @user.stores.map(&:name).join(", ") %></td>
       </tr>
+      <tr>
+        <td><strong>Comentarios</strong></td>
+        <td><%= @user.comments %></td>
+      </tr>
     </table>
   </div>
 
   <div class="panel-footer">
     <div class="row text-right">
+      <%= link_to 'Cambiar Contraseña', password_reset_users_path, class: "btn btn-primary" %>
       <%= link_to 'Modificar', edit_user_path(@user), class: "btn btn-primary" %>
       <%= link_to 'Reporte de Usuarios', users_path, class: "btn btn-info" %>
     </div>

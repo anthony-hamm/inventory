@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	before_action :confirm_logged_in, :set_stores
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :set_user, only: [:show, :edit, :update, :destroy, :update_password, :password_reset]
 
 	# GET /users
 	def index
@@ -11,7 +11,6 @@ class UsersController < ApplicationController
 
 	# GET /users/1
 	def show
-
 	end
 
 	# GET /users/new
@@ -47,6 +46,18 @@ class UsersController < ApplicationController
 			end
 	end
 
+  def password_reset
+
+	end
+
+  def update_password
+		if @user.update(password_params)
+			redirect_to @user, notice: 'La contraseña fue actualizada de forma exitosa.'
+		else
+			render :password_reset
+		end
+	end
+
 	# DELETE /users/1
 	def destroy
 		@user.destroy
@@ -62,6 +73,11 @@ class UsersController < ApplicationController
 		# Never trust parameters from the scary internet, only allow the white list through.
 		def user_params
 			params.require(:user).permit(:name, :phone, :email, :comments, :password, :rol_id, :username, store_ids: [])
+		end
+
+		# Never trust parameters from the scary internet, only allow the white list through.
+		def password_params
+			params.require(:user).permit(:password, :password_confirmation)
 		end
 
   	def set_stores

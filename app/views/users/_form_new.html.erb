@@ -1,0 +1,105 @@
+<%= form_for(user) do |f| %>
+  <div class="panel-body">
+    <% if user.errors.any? %>
+      <div id="error_explanation">
+        <h4>El formulario contiene los siguientes errores:</h4>
+
+        <ul>
+          <% user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :name %>
+        </div>
+        <div class="col-sm-9">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :username %>
+        </div>
+        <div class="col-sm-9">
+          <%= f.text_field :username, class:"form-control" %>
+        </div>
+        <br>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :password %>
+        </div>
+        <div class="col-md-9">
+          <%= f.password_field :password, class:"form-control" %>
+        </div>
+        <br>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :email %>
+        </div>
+        <div class="col-sm-9">
+          <%= f.text_field :email, class:"form-control" %>
+        </div>
+        <br>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :phone %>
+        </div>
+        <div class="col-sm-9">
+          <%= f.text_field :phone, class:"form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :rol %>
+        </div>
+        <div class="col-md-9">
+          <%= f.text_field :rol_id, class:"form-control" %>
+        </div>
+        <br>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :store_ids %>
+        </div>
+        <div class="col-md-9">
+          <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+          <%= f.select :store_ids, options_for_select( @stores.map { |store|
+            [store.name, store.id] },@user.store_ids), {}, { class:"form-control selectpicker", multiple: true, } %>
+        </div>
+        <br>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 control-label">
+          <%= f.label :comments %>
+        </div>
+        <div class="col-md-9">
+          <%= f.text_area :comments, class:"form-control" %>
+        </div>
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel-footer">
+    <div class="row text-right">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to 'Reporte de Usuarios', users_path, class: "btn btn-info" %>
+    </div>
+  </div>
+<% end %>

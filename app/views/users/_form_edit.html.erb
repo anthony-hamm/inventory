@@ -6,7 +6,7 @@
 
         <ul>
           <% user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
+            <li><%= message %></li>
           <% end %>
         </ul>
       </div>
@@ -53,20 +53,22 @@
 
       <div class="form-group">
         <div class="col-sm-2 control-label">
-          <%= f.label :password %>
+          <%= f.label :rol %>
         </div>
         <div class="col-md-9">
-          <%= f.password_field :password, class:"form-control" %>
+          <%= f.text_field :rol_id, class:"form-control" %>
         </div>
         <br>
       </div>
 
       <div class="form-group">
         <div class="col-sm-2 control-label">
-          <%= f.label :rol %>
+          <%= f.label :store_ids %>
         </div>
         <div class="col-md-9">
-          <%= f.text_field :rol_id, class:"form-control" %>
+          <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+          <%= f.select :store_ids, options_for_select( @stores.map { |store|
+            [store.name, store.id] },@user.store_ids), {}, { class:"form-control selectpicker", multiple: true, } %>
         </div>
         <br>
       </div>
@@ -81,26 +83,13 @@
         <br>
       </div>
 
-
-      <div class="form-group">
-        <div class="col-sm-2 control-label">
-          <%= f.label :store_ids %>
-        </div>
-        <div class="col-md-9">
-          <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
-          <%= f.select :store_ids, options_for_select( @stores.map { |store|
-            [store.name, store.id] },@user.store_ids), {}, { class:"form-control selectpicker", multiple: true, } %>
-        </div>
-        <br>
-      </div>
-
     </div>
   </div>
 
   <div class="panel-footer">
     <div class="row text-right">
       <%= f.submit class: "btn btn-primary" %>
-      <%= link_to 'Reporte de Usuarios', users_path, class: "btn btn-info" %>
+      <%= link_to 'Atrás', users_path, class: "btn btn-info" %>
     </div>
   </div>
 <% end %>
