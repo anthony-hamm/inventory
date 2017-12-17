@@ -89,7 +89,7 @@
         <div class="col-md-9">
           <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
           <%= f.select :store_ids, options_for_select( @stores.map { |store|
-            [store.name, store.id] }), {}, { class:"form-control selectpicker", multiple: true } %>
+            [store.name, store.id] },@user.store_ids), {}, { class:"form-control selectpicker", multiple: true, } %>
         </div>
         <br>
       </div>
