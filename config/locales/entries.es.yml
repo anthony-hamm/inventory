@@ -5,3 +5,4 @@ es:
         store_id: "Tienda"
         item_id: "Artículo"
         quantity: "Cantidad"
+        create_entry: "Hola"
