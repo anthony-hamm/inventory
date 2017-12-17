@@ -1,1 +1,90 @@
-<p>Menu</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventario</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" <%= link_to('Inventario', access_menu_path) %> </a>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="panel">
+    <div class="panel-body ">
+      <div class="form-horizontal">
+        <div class="container">
+          <div class="row container">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-center container">
+              <br>
+              <br>
+              <%= link_to new_entry_path do %><span class="fa fa-pencil-square-o fa-5x " aria-hidden="true"></span><% end %>
+              <h2>
+                Ingresar Mercadería
+              </h2>
+              <br>
+              <br>
+            </div>
+            <div class="col-sm-4 text-center container">
+              <!--<i class="fa fa-usd fa-5x" aria-hidden="true"></i>-->
+              <br>
+              <br>
+              <%= link_to new_sale_path do %><span class="fa fa-usd fa-5x" aria-hidden="true"></span><% end %>
+              <h2>
+                Registrar Venta
+              </h2>
+              <br>
+              <br>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row container">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-center">
+              <br>
+              <br>
+              <%= link_to stocks_path do %><span class="fa fa-cog fa-5x" aria-hidden="true"></span><% end %>
+              <h2>
+                Inventario
+              </h2>
+              <br>
+              <br>
+            </div>
+            <div class="col-sm-4 text-center">
+              <br>
+              <br>
+              <%= link_to access_logout_path do %><span class="fa fa-sign-out fa-5x" aria-hidden="true"></span><% end %>
+              <h2>
+                Cerrar Sesión
+              </h2>
+              <br>
+              <br>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
