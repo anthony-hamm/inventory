@@ -2,8 +2,11 @@ class AccessController < ApplicationController
 
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
+
   def menu
     # display text & links
+    #  render 'menu'
+     render layout:false
   end
 
   def login
