@@ -18,9 +18,15 @@
             <%= f.label :store_id %>
           </div>
           <div class="col-sm-9">
+            <% if @entry.new_record? %>
             <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
             <%= f.select :store_id, options_for_select( @store.map { |store| 
+              [store.name, store.id] }), :include_blank => "Seleccionar Tienda", class:"form-control" %>
+            <% else %>
+            <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+            <%= f.select :store_id, options_for_select( @store.map { |store|
               [store.name, store.id] },@entry.store.id), :include_blank => "Seleccionar Tienda", class:"form-control" %>
+            <% end %>
           </div>
         </div>
 
@@ -30,9 +36,15 @@
             <%= f.label :item_id %>
           </div>
           <div class="col-sm-9">
+            <% if @entry.new_record? %>
             <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
             <%= f.select :item_id, options_for_select( @item.map { |item| 
+              [item.name, item.id] }), :include_blank => "Seleccionar Articulo", class:"form-control" %>
+            <% else %>
+            <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+            <%= f.select :item_id, options_for_select( @item.map { |item|
               [item.name, item.id] },@entry.item.id), :include_blank => "Seleccionar Articulo", class:"form-control" %>
+            <% end %>
           </div>
         </div>
 
