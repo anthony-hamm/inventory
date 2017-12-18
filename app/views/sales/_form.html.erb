@@ -13,15 +13,22 @@
 		<% end %>
 
 		<div class="form-horizontal">
-			<div class="form-group">
+      <div class="form-group">
 				<div class="col-sm-2 control-label">
 					<%= f.label :store_id %>
 				</div>
-				<div class="col-sm-9">
-					<!--  Dynamic dropdown with Embedded Ruby (ERB) -->
-					<%= f.select :store_id, options_for_select( @store.map { |store| 
-						[store.name, store.id] }, @sale.store.id), :include_blank => "Seleccionar Tienda", class:"form-control" %>
-				</div>
+        <div class="col-sm-9">
+        <% if @sale.new_record? %>
+          <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+          <%= f.select :store_id, options_for_select( @store.map { |store|
+            [store.name, store.id] }), :include_blank => "Seleccionar Tienda", class:"form-control" %>
+        </div>
+        <% else %>
+          <!--  Dynamic dropdown with Embedded Ruby (ERB) -->
+          <%= f.select :store_id, options_for_select( @store.map { |store|
+            [store.name, store.id] }, @sale.store.id), :include_blank => "Seleccionar Tienda", class:"form-control" %>
+        </div>
+        <% end %>
 			</div>
 
 			<div class="form-group">
@@ -29,9 +36,15 @@
 					<%= f.label :item_id %>
 				</div>
 				<div class="col-sm-9">
-					<!--  Dynamic dropdown with Embedded Ruby (ERB) -->
-					<%= f.select :item_id, options_for_select( @item.map { |item| 
-						[item.name, item.id] }, @sale.item.id), :include_blank => "Seleccionar Articulo", class:"form-control" %>
+          <% if @sale.new_record? %>
+					<!--&lt;!&ndash;  Dynamic dropdown with Embedded Ruby (ERB) &ndash;&gt;-->
+					<%= f.select :item_id, options_for_select( @item.map { |item|
+						[item.name, item.id] }), :include_blank => "Seleccionar Articulo", class:"form-control" %>
+          <% else %>
+            <!--&lt;!&ndash;  Dynamic dropdown with Embedded Ruby (ERB) &ndash;&gt;-->
+            <%= f.select :item_id, options_for_select( @item.map { |item|
+              [item.name, item.id] }, @sale.item.id), :include_blank => "Seleccionar Articulo", class:"form-control" %>
+          <% end %>
 				</div>
 			</div>
 
