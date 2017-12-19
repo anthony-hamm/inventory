@@ -10,6 +10,7 @@ class Store < ApplicationRecord
 	has_many :sales
 
 	#Associations for Stock table
+	has_many :snapshots
 	has_many :stocks
 	has_many :items, through: :stocks
 

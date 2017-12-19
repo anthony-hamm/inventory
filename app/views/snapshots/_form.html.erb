@@ -1,0 +1,35 @@
+<%= form_tag(store_snapshots_path(@store)) do %>
+	<div class="panel-body">
+		<% if @form.errors.any? %>
+			<div id="error_explanation">
+        <h4>El formulario contiene los siguientes errores:</h4>
+
+				<ul>
+					<% @form.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+
+    <% @store.items.each do |i| %>
+      <div class="form-horizontal">
+        <div class="form-group">
+          <div class="col-sm-2 control-label">
+            <%= label_tag :id, i.name %>
+          </div>
+          <div class="col-sm-2">
+            <%= hidden_field_tag :id, i.id, name: "store[items][][id]" %>
+            <%= number_field_tag :quantity, nil, class: "form-control", name: "store[items][][quantity]" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+	</div>
+
+	<div class="panel-footer">
+		<div class="row text-right">
+			<%= submit_tag 'Guardar', class: "btn btn-primary"%>
+		</div>
+	</div>
+<% end %>

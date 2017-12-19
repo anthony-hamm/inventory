@@ -18,6 +18,7 @@
         <td><%= store.description %></td>
         <td><%= link_to 'Mostrar', store, class: "btn btn-primary" %>
           <%= link_to 'Modificar', edit_store_path(store), class: "btn btn-primary" %>
+          <%= link_to 'Generar Inventario', new_store_snapshot_path(store), class: "btn btn-primary" %>
           <%= link_to 'Eliminar', store,  class: "btn btn-danger", method: :delete, data: { confirm: 'Estas Seguro de Eliminar la Tienda?' } %></td>
       </tr>
   <% end %>

@@ -1,0 +1,25 @@
+<h1>Inventario</h1>
+
+<table class="table datatable table-bordered table-striped table-condensed table-hover text-center">
+  <thead>
+  <tr>
+    <th class="text-center">Tienda</th>
+    <th class="text-center">Perdida</th>
+    <th class="text-center">Sobrante</th>
+    <th class="text-center">Fecha</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @snapshots.each do |snapshot| %>
+      <tr>
+        <td><%= snapshot.store.name %></td>
+        <td><%= snapshot.total_loss %></td>
+        <td><%= snapshot.total_excess %></td>
+        <td><%= snapshot.created_at %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>

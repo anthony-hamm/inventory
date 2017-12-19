@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :stocks
-  resources :stores
+  resources :stores do
+    resources :snapshots
+  end
   resources :items
   resources :entries
   resources :sales

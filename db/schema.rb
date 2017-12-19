@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215010114) do
+ActiveRecord::Schema.define(version: 20171216021558) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "entries", force: :cascade do |t|
     t.integer  "store_id"
@@ -35,6 +38,16 @@ ActiveRecord::Schema.define(version: 20171215010114) do
     t.integer  "sale_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "snapshots", force: :cascade do |t|
+    t.integer  "store_id"
+    t.json     "items"
+    t.integer  "total_loss",   default: 0
+    t.integer  "total_excess", default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["store_id"], name: "index_snapshots_on_store_id", using: :btree
   end
 
   create_table "stocks", force: :cascade do |t|
