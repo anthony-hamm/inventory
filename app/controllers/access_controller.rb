@@ -25,7 +25,7 @@ class AccessController < ApplicationController
       flash[:notice] = "Ha ingresado correctamente."
       redirect_to(access_menu_path)
     else
-      flash.now[:notice] = "El Usuario o Clave son invalidos."
+      flash[:notice] = "El Usuario o Clave son inválidos."
       redirect_to(access_login_path)
     end
   end
